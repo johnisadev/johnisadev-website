@@ -14,7 +14,11 @@
 import Hero from '../components/hero'
 
 const Page = () => {
-  return <><Hero /></>
+  return (
+    <>
+      <Hero />
+    </>
+  )
 }
 
 export default Page

@@ -14,6 +14,8 @@ import {
 } from '@chakra-ui/react'
 import Hero from '../components/hero'
 import Layout from '../components/layouts/article'
+import Section from '../components/section'
+import Paragraph from '../components/paragraph'
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
@@ -23,8 +25,8 @@ const HomePage = () => {
   return (
     <Layout>
       <Hero />
-      <Container textAlign={'center'} paddingY={{ base: 5, md: 28 }}>
-        <Box display={{ md: 'flex' }}>
+      <Container textAlign={'center'} paddingY={{ base: 2, md: 5 }}>
+        <Box display={{ md: 'flex' }} py={{ base: 10, md: 20 }}>
           <Box flexGrow={1}>
             <Heading as="h2" variant="page-title">
               John Knowles
@@ -58,6 +60,16 @@ const HomePage = () => {
             </Box>
           </Box>
         </Box>
+        <Section delay={0.1}>
+          <Heading as="h3" variant="section-title">
+            About
+          </Heading>
+          <Paragraph>
+            Mollit reprehenderit labore deserunt irure in aute elit sint commodo
+            nostrud. Amet laborum veniam nisi in ipsum tempor culpa Lorem veniam
+            adipisicing amet commodo. Nisi sunt sunt adipisicing veniam.
+          </Paragraph>
+        </Section>
       </Container>
     </Layout>
   )

@@ -43,7 +43,7 @@ const Hero = () => {
       <Stack
         align={'center'}
         spacing={{ base: 8, md: 10 }}
-        py={{ base: 5, md: 28 }}
+        py={{ base: 5, md: 24 }}
         direction={{ base: 'column', md: 'row' }}
       >
         <Flex
@@ -64,7 +64,7 @@ const Hero = () => {
           />
           <LazyCarModel />
         </Flex>
-        <Stack flex={1} spacing={{ base: 5, md: 10 }}>
+        <Stack flex={1} spacing={{ base: 5, md: 10 }} paddingTop={{ base: 14 }}>
           <Heading
             lineHeight={1.1}
             fontWeight={600}

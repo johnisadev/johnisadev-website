@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import Head from 'next/head'
-import { GridItemStyles } from '../grid-item'
+// import { GridItemStyles } from '../grid-item'
 
 const variants = {
   hidden: { opacity: 0, x: 0, y: 20 },
@@ -15,7 +15,7 @@ const ArticleLayout = ({ children, title }) => (
     exit="exit"
     variants={variants}
     transition={{ duration: 0.4, type: 'easeInOut' }}
-    style={{ position: 'relative' }}
+    // style={{ position: 'relative' }}
   >
     <>
       {title && (
@@ -26,7 +26,7 @@ const ArticleLayout = ({ children, title }) => (
         </Head>
       )}
       {children}
-      <GridItemStyles />
+      {/* <GridItemStyles /> */}
     </>
   </motion.article>
 )

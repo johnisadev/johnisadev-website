@@ -2,11 +2,11 @@ import {
   Container,
   Stack,
   Flex,
-  Box,
+  // Box,
   Heading,
   Text,
   Button,
-  Image,
+  // Image,
   Icon,
   useColorModeValue
 } from '@chakra-ui/react'
@@ -39,33 +39,39 @@ const Blob = props => {
 
 const Hero = () => {
   return (
-    <Container maxW={'7xl'}>
+    <Container maxW={'7xl'} paddingX={{ md: '5rem' }}>
       <Stack
         align={'center'}
         spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 28 }}
+        py={{ base: 5, md: 28 }}
         direction={{ base: 'column', md: 'row' }}
       >
+        <Flex
+          flex={1}
+          justify={'center'}
+          align={'center'}
+          position={'relative'}
+          w={'full'}
+        >
+          <Blob
+            w={'150%'}
+            h={'150%'}
+            position={'absolute'}
+            top={'-20%'}
+            left={0}
+            zIndex={-1}
+            color={useColorModeValue('red.50', 'red.400')}
+          />
+          <LazyCarModel />
+        </Flex>
         <Stack flex={1} spacing={{ base: 5, md: 10 }}>
           <Heading
             lineHeight={1.1}
             fontWeight={600}
             fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}
+            textAlign="center"
           >
-            <Text
-              as={'span'}
-              position={'relative'}
-              _after={{
-                content: "''",
-                width: 'full',
-                height: '30%',
-                position: 'absolute',
-                bottom: 1,
-                left: 0,
-                bg: 'gray.400',
-                zIndex: -1
-              }}
-            >
+            <Text as={'span'} position={'relative'}>
               Stunning Web Experiences,
             </Text>
             <br />
@@ -90,33 +96,6 @@ const Hero = () => {
             </Button>
           </Stack>
         </Stack>
-        <Flex
-          flex={1}
-          justify={'center'}
-          align={'center'}
-          position={'relative'}
-          w={'full'}
-        >
-          <Blob
-            w={'150%'}
-            h={'150%'}
-            position={'absolute'}
-            top={'-20%'}
-            left={0}
-            zIndex={-1}
-            color={useColorModeValue('red.50', 'red.400')}
-          />
-          <LazyCarModel />
-
-          {/* <Image
-              alt={'Hero Image'}
-              fit="cover"
-              align="center"
-              w={'100%'}
-              h="100%"
-              src={'https://via.placeholder.com/800'}
-            /> */}
-        </Flex>
       </Stack>
     </Container>
   )

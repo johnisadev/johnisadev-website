@@ -2,6 +2,8 @@
   "root": true,
   "extends": "next",
   "rules": {
+    // eslint-disable
+    "semi": 0,
     "no-unused-vars": [
       "error",
       {

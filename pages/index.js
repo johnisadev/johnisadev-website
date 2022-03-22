@@ -12,10 +12,14 @@ import {
   useColorModeValue,
   chakra
 } from '@chakra-ui/react'
+import { ChevronRightIcon } from '@chakra-ui/icons'
+import { AiFillGithub, AiFillLinkedin, AiFillTwitterCircle } from 'react-icons/ai'
+
 import Hero from '../components/hero'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
+import { BioSection, BioYear } from '../components/bio'
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
@@ -69,6 +73,72 @@ const HomePage = () => {
             nostrud. Amet laborum veniam nisi in ipsum tempor culpa Lorem veniam
             adipisicing amet commodo. Nisi sunt sunt adipisicing veniam.
           </Paragraph>
+          <Box align="center" my={4}>
+            <NextLink href="/contact" scroll={false} passHref>
+              <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
+                Hire Me
+              </Button>
+            </NextLink>
+          </Box>
+        </Section>
+
+        <Section delay={0.2}>
+          <Heading as='h3' varaint='section-title'>
+            Bio
+          </Heading>
+          <BioSection>
+            <BioYear>2018</BioYear>
+            Senior Full Stack Bootcamp Tutor @ Trilogy Education Services
+          </BioSection>
+          <BioSection>
+            <BioYear>2021</BioYear>
+            SAP Variant Configuration Developer @ Columbus Mckinnion Corp.
+          </BioSection>
+          <BioSection>
+            <BioYear>2022 to Present</BioYear>
+            Contract/Freelance Web Develooper
+          </BioSection>
+        </Section>
+
+        <Section delay={0.3}>
+          <Heading as='h3' variant='section-title'>
+            On The Web
+          </Heading>
+          <List>
+          <ListItem>
+            <Link href="https://www.linkedin.com/in/johnaknowles/" target="_blank">
+              <Button
+                variant="ghost"
+                colorScheme="red"
+                leftIcon={<AiFillLinkedin />}
+              >
+                @johnaknowles
+              </Button>
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href="https://github.com/johnisadev" target="_blank">
+              <Button
+                variant="ghost"
+                colorScheme="red"
+                leftIcon={<AiFillGithub />}
+              >
+                @Johnisadev
+              </Button>
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href="https://twitter.com/" target="_blank">
+              <Button
+                variant="ghost"
+                colorScheme="red"
+                leftIcon={<AiFillTwitterCircle/>}
+              >
+                @johnisdev
+              </Button>
+            </Link>
+          </ListItem>
+        </List>
         </Section>
       </Container>
     </Layout>
